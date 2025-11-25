@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/contact', contactRoutes);
+app.use('/api', contactRoutes);
 
 // Basic route
 app.get('/', (req, res) => {

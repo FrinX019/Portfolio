@@ -3,7 +3,7 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-router.post('/', async (req, res) => {
+router.post('/contact', async (req, res) => {
     const { name, email, message } = req.body;
 
     console.log('Received contact form submission:', { name, email, message });
