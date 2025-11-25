@@ -1,0 +1,196 @@
+.resume-container {
+    padding: 60px;
+    /* Updated from 100px 20px */
+    max-width: 900px;
+    /* Updated from 1000px */
+    margin: 0 auto;
+    background: var(--bg-color);
+    /* Added */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    /* Added */
+    transform: rotate(1deg);
+    /* Added */
+    position: relative;
+    /* Added */
+}
+
+.resume-container::before {
+    /* Added */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--grid-bg, linear-gradient(#e8e8e8 1px, transparent 1px));
+    background-size: 100% 30px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.resume-header,
+.resume-section {
+    /* Added */
+    position: relative;
+    z-index: 1;
+}
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    border-bottom: 3px solid var(--text-color);
+    /* Added/Updated */
+    padding-bottom: 20px;
+    /* Added */
+}
+
+.resume-header h2 {
+    font-family: var(--font-heading);
+    /* Added */
+    font-size: 3rem;
+    color: var(--text-color);
+    /* Updated from var(--secondary-color) */
+}
+
+.download-btn {
+    padding: 10px 20px;
+    /* Updated from 15px 30px */
+    background: var(--primary-color);
+    /* Updated from transparent */
+    border: 2px solid var(--text-color);
+    /* Updated from var(--primary-color) */
+    color: var(--text-color);
+    /* Updated from var(--primary-color) */
+    font-weight: bold;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    /* Updated from 30px */
+    cursor: none;
+    transition: all 0.3s ease;
+    font-family: var(--font-main);
+    /* Added */
+}
+
+.download-btn:hover {
+    transform: rotate(-2deg) scale(1.05);
+    /* Updated from background, color, box-shadow */
+    box-shadow: 3px 3px 0px var(--text-color);
+    /* Added */
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 3px solid var(--secondary-color);
+
+    /* Added dark mode override */
+    [data-theme="dark"] & {
+        border-left: 3px solid var(--primary-color);
+    }
+}
+
+/* Existing comment */
+/* Replaced ::before with this */
+
+
+/* .timeline::before was removed */
+
+.timeline-item {
+    margin-bottom: 40px;
+    /* Updated from 50px */
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    /* Updated from -56px */
+    top: 5px;
+    /* Updated from 0 */
+    width: 12px;
+    /* Updated from 14px */
+    height: 12px;
+    /* Updated from 14px */
+    background: var(--text-color);
+    /* Updated from var(--bg-color) */
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+.timeline-date {
+    font-size: 1rem;
+    /* Updated from 0.9rem */
+    color: var(--text-color);
+    /* Updated from var(--primary-color) */
+    margin-bottom: 5px;
+    /* Updated from 10px */
+    font-weight: bold;
+    /* Added */
+    background: var(--secondary-color);
+    /* Added */
+    display: inline-block;
+    /* Added */
+    padding: 2px 8px;
+    /* Added */
+    transform: rotate(-1deg);
+    /* Added */
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    /* Updated from 1.8rem */
+    margin-bottom: 5px;
+    font-weight: bold;
+    /* Added */
+}
+
+[data-theme="dark"] .timeline-content h4 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .timeline-content h3 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .timeline-date {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.timeline-content p,
+.timeline-content li {
+    /* Updated from .timeline-content p and .timeline-content li */
+    line-height: 1.6;
+    color: var(--text-color);
+    /* Updated from rgba(255, 255, 255, 0.8) */
+    font-size: 1.1rem;
+    /* Added */
+}
+
+.timeline-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+    /* color: rgba(255, 255, 255, 0.8); was removed */
+}
+
+/* .timeline-content li was merged into .timeline-content p, .timeline-content li */
+
+.section-header {
+    font-family: var(--font-heading);
+    /* Added */
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    border-bottom: none;
+    /* Updated from 1px solid rgba(255, 255, 255, 0.1) */
+    text-decoration: underline wavy var(--accent-color);
+    /* Added */
+}
+
+.resume-section {
+    margin-bottom: 50px;
+    /* Updated from 60px */
+}
