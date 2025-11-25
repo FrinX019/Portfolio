@@ -19,7 +19,7 @@ const Contact = () => {
         setStatus('sending');
 
         try {
-            const response = await fetch('https://frinx019.onrender.com', {
+            const response = await fetch('https://frinx019.onrender.com/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -30,14 +30,16 @@ const Contact = () => {
             if (response.ok) {
                 setStatus('success');
                 setFormData({ name: '', email: '', message: '' });
+
+                alert("Message sent successfully!");
             } else {
                 setStatus('error');
-                alert('Failed to send message. Please try again.');
+                alert("Failed to send message. Please try again.");
             }
         } catch (error) {
-            console.error('Error:', error);
+            console.error("Error:", error);
             setStatus('error');
-            alert('An error occurred. Please try again later.');
+            alert("An error occurred. Please try again later.");
         }
     };
 
@@ -92,7 +94,11 @@ const Contact = () => {
                         ></textarea>
                     </div>
                     <button type="submit" className="submit-btn" disabled={status === 'sending'}>
-                        {status === 'sending' ? 'Sending...' : status === 'success' ? 'Sent!' : 'Send Message'}
+                        {status === 'sending'
+                            ? 'Sending...'
+                            : status === 'success'
+                            ? 'Sent!'
+                            : 'Send Message'}
                     </button>
                 </form>
             </div>
