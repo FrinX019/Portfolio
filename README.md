@@ -90,22 +90,22 @@ EMAIL_PASS=your_password
 
 ### 🏠 Home Page
 <p align="center">
-  <img src="../client/public/ScreenShots/Screenshot 1.png" width="800" />
+  <img src="https://github.com/FrinX019/Portfolio/blob/main/client/public/ScreenShots/Screenshot%201.png" width="800" />
 </p>
 
 ### 💼 About Me Page
 <p align="center">
-  <img src="../client/public/ScreenShots/Screenshot 2.png" width="800" />
+  <img src="https://github.com/FrinX019/Portfolio/blob/main/client/public/ScreenShots/Screenshot%202.png" width="800" />
 </p>
 
 ### 💼 Resume Page
 <p align="center">
-  <img src="../client/public/ScreenShots/Screenshot 3.png" width="800" />
+  <img src="https://github.com/FrinX019/Portfolio/blob/main/client/public/ScreenShots/Screenshot%203.png" width="800" />
 </p>
 
 ### 📞 Contact Page
 <p align="center">
-  <img src="../client/public/ScreenShots/Screenshot 4.png" width="800" />
+  <img src="https://github.com/FrinX019/Portfolio/blob/main/client/public/ScreenShots/Screenshot%204.png" width="800" />
 </p>
 
 ---
