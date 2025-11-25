@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Home.css';
+import { Link } from "react-router-dom";    
 
 const Home = () => {
     const containerVariants = {
@@ -50,8 +51,8 @@ const Home = () => {
                     Building digital experiences that <span className="highlight">hit different</span>.
                 </motion.p>
                 <motion.div variants={itemVariants} className="cta-group">
-                    <a href="/projects" className="btn-primary">View Work</a>
-                    <a href="/contact" className="btn-secondary">Let's Talk</a>
+                   <a href=""><Link to="/projects" className="btn-primary">View Work</Link></a>
+                    <Link to="/contact" className="btn-secondary">Let's Talk</Link>
                 </motion.div>
             </div>
 
