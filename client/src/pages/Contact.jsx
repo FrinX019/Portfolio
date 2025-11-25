@@ -19,7 +19,7 @@ const Contact = () => {
         setStatus('sending');
 
         try {
-            const response = await fetch('http://localhost:3001/api/contact', {
+            const response = await fetch('https://frinx019.onrender.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
