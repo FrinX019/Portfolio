@@ -9,7 +9,16 @@ router.post('/contact', async (req, res) => {
     console.log('Received contact form submission:', { name, email, message });
 
     try {
-        // Create Gmail transporter
+        if (!name || !email || !message) {
+            return res.status(400).json({ message: 'All fields are required.' });
+        }
+
+        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.MAIL_TO) {
+            return res.status(500).json({
+                message: 'Email service is not configured. Set EMAIL_USER, EMAIL_PASS, and MAIL_TO.'
+            });
+        }
+
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -18,16 +27,11 @@ router.post('/contact', async (req, res) => {
             }
         });
 
-        // Email options
         const mailOptions = {
             from: process.env.EMAIL_USER,
-            to: 'ferminfierro4@gmail.com',
+            to: process.env.MAIL_TO,
             subject: `New Portfolio Message from ${name}`,
-            text: `
-      Name: ${name}
-      Email: ${email}
-      Message: ${message}
-    `,
+            text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
             html: `
       <h2>New Contact Form Submission</h2>
       <p><strong>Name:</strong> ${name}</p>

@@ -9,6 +9,7 @@ const Contact = () => {
         message: ''
     });
     const [status, setStatus] = useState('');
+    const apiBase = import.meta.env.VITE_API_BASE_URL || '';
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,7 +20,7 @@ const Contact = () => {
         setStatus('sending');
 
         try {
-            const response = await fetch('https://frinx019.onrender.com/api/contact', {
+            const response = await fetch(`${apiBase}/api/contact`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
