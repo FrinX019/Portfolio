@@ -5,6 +5,9 @@ import './CustomCursor.css';
 const CustomCursor = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [cursorVariant, setCursorVariant] = useState("default");
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
+    if (isTouchDevice) return null;
 
     useEffect(() => {
         const mouseMove = (e) => {

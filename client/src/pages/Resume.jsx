@@ -51,15 +51,15 @@ const Resume = () => {
                 <h3 className="section-header">Education</h3>
                 <div className="timeline">
                     <div className="timeline-item">
-                        <div className="timeline-date">Sept 2024 - Present</div>
+                        <div className="timeline-date">Sept 2024 - April 2026</div>
                         <div className="timeline-content">
                             <h3>PG in Information Technology Solutions</h3>
                             <h4>Humber College</h4>
-                            <p>GPA: 3.60/4.00</p>
+                            <p>GPA: 3.74/4.00</p>
                         </div>
                     </div>
                     <div className="timeline-item">
-                        <div className="timeline-date">May 2024</div>
+                        <div className="timeline-date">August 2020 - May 2024</div>
                         <div className="timeline-content">
                             <h3>BEng in Computer Engineering</h3>
                             <h4>Kalol Institute Of Technology And Research Centre</h4>

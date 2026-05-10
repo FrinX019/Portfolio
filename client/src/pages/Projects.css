@@ -67,7 +67,7 @@
 }
 
 .project-card:hover {
-    transform: scale(1.05) rotate(0deg) !important;
+    transform: scale(1.03) rotate(0deg) !important;
     z-index: 10;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
 }
@@ -101,8 +101,10 @@
     height: 100%;
     background: rgba(255, 255, 255, 0.8);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -118,10 +120,11 @@
     border: none;
     font-family: var(--font-main);
     font-weight: bold;
-    cursor: none;
+    cursor: pointer;
     transform: translateY(20px);
     transition: transform 0.3s ease;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .project-card:hover .view-btn {
@@ -132,11 +135,37 @@
     padding: 10px;
 }
 
+.card-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
 .card-content h3 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    margin-bottom: 10px;
     color: var(--text-color);
+    margin: 0;
+}
+
+.live-tag {
+    font-size: 0.75rem;
+    font-family: var(--font-main);
+    font-weight: bold;
+    padding: 3px 8px;
+    background: var(--primary-color);
+    color: #000;
+    border-radius: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+}
+
+.live-tag:hover {
+    opacity: 0.8;
 }
 
 .card-content p {
@@ -159,4 +188,114 @@
     border-radius: 5px;
     color: var(--text-color);
     border: 1px dashed var(--text-color);
+}
+
+.card-links {
+    display: none;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.card-link-btn {
+    padding: 8px 16px;
+    background: var(--text-color);
+    color: #fff;
+    font-family: var(--font-main);
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.live-link-btn {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+.view-btn {
+    cursor: pointer;
+}
+
+.live-btn {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .project-card:active {
+        transform: scale(0.97) rotate(0deg) !important;
+        transition: transform 0.1s ease;
+    }
+
+    .projects-container {
+        padding: 60px 15px 40px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        perspective: none;
+    }
+
+    .project-card {
+        transform: rotate(0.3deg);
+    }
+
+    .project-card:nth-child(even) {
+        transform: rotate(-0.3deg);
+    }
+
+    .project-card:hover {
+        transform: scale(1.02) rotate(0deg) !important;
+    }
+
+    .card-image {
+        height: 200px;
+    }
+
+    .card-overlay {
+        display: none;
+    }
+
+    .card-links {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-content p {
+        font-size: 0.95rem;
+    }
+
+    .tags span {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .project-card {
+        transform: none;
+    }
+
+    .project-card:nth-child(even) {
+        transform: none;
+    }
 }

@@ -37,9 +37,8 @@ const About = () => {
                 >
                     <h2>About Me</h2>
                     <p>
-                        I'm Frin Patel, a Full Stack Developer based in Toronto. I specialize in building robust applications using Java, Spring Boot, and React.
-                        With a strong foundation in Computer Engineering and Data Analytics, I love solving complex problems and optimizing performance.
-                    </p>
+                        I'm a Full Stack Developer and founder of Annoraa, a software company building tools that simplify operations for field service businesses. My first product, SUTRA, is a live multi-tenant SaaS platform designed for fire protection companies — covering everything from inspections and work orders to quotes, invoices, and mobile technician workflows. I built it end-to-end using React, Next.js, Expo, MongoDB, and Node.js, and it's actively used in production today.</p>
+                    <p> Alongside Annoraa, I've built production-grade Java applications using Spring Boot, Hibernate/JPA, and Oracle — including a full CPQ platform delivered for an industry client. I'm passionate about solving real operational problems through clean, scalable software, and I'm currently open to junior or intermediate developer roles remote or on-site, where I can keep growing while continuing to build Annoraa on the side.</p>
                     <div className="skills-grid">
                         {['Java', 'Spring Boot', 'React', 'Node.js', 'Oracle 19c', 'MongoDB', 'Python', 'Docker', 'AWS'].map((skill, index) => (
                             <motion.div

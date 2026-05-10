@@ -56,20 +56,16 @@
 
 .download-btn {
     padding: 10px 20px;
-    /* Updated from 15px 30px */
     background: var(--primary-color);
-    /* Updated from transparent */
     border: 2px solid var(--text-color);
-    /* Updated from var(--primary-color) */
     color: var(--text-color);
-    /* Updated from var(--primary-color) */
     font-weight: bold;
     border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-    /* Updated from 30px */
-    cursor: none;
+    cursor: pointer;
     transition: all 0.3s ease;
     font-family: var(--font-main);
-    /* Added */
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .download-btn:hover {
@@ -192,5 +188,61 @@
 
 .resume-section {
     margin-bottom: 50px;
-    /* Updated from 60px */
+}
+
+@media (max-width: 768px) {
+    .resume-container {
+        padding: 30px 20px;
+        transform: none;
+    }
+
+    .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    .resume-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .section-header {
+        font-size: 1.6rem;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-item::before {
+        left: -28px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content p,
+    .timeline-content li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-container {
+        padding: 25px 15px;
+    }
+
+    .resume-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-header {
+        font-size: 1.4rem;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+    }
 }

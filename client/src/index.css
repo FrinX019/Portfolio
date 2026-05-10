@@ -34,6 +34,12 @@
   cursor: none;
 }
 
+@media (pointer: coarse) {
+  * {
+    cursor: auto;
+  }
+}
+
 body {
   background-color: var(--bg-color);
   background-image: var(--paper-texture);
