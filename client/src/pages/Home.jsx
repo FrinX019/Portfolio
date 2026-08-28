@@ -1,7 +1,9 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import './Home.css';
-import { Link } from "react-router-dom";    
+import { Link } from 'react-router-dom';
+import AnimeQuotePopup from '../components/AnimeQuotePopup';
+import EasterEggFooter from '../components/EasterEggFooter';
+import FloatingDoodles from '../components/FloatingDoodles';
+import './Home.css';    
 
 const Home = () => {
     const containerVariants = {
@@ -41,6 +43,9 @@ const Home = () => {
             exit="exit"
         >
             <div className="hero-content">
+                <motion.div variants={itemVariants} className="home-easter-egg">
+                    <EasterEggFooter variant="home" />
+                </motion.div>
                 <motion.h1 variants={itemVariants} className="glitch-effect" data-text="CREATIVE">
                     CREATIVE
                 </motion.h1>
@@ -51,10 +56,13 @@ const Home = () => {
                     Building digital experiences that <span className="highlight">hit different</span>.
                 </motion.p>
                 <motion.div variants={itemVariants} className="cta-group">
-                   <a href=""><Link to="/projects" className="btn-primary">View Work</Link></a>
+                    <Link to="/projects" className="btn-primary">View Work</Link>
                     <Link to="/contact" className="btn-secondary">Let's Talk</Link>
                 </motion.div>
             </div>
+
+            <FloatingDoodles />
+            <AnimeQuotePopup />
 
             <div className="background-elements">
                 <motion.div

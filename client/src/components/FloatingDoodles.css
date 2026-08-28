@@ -1,0 +1,28 @@
+.floating-doodles {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.doodle {
+    position: absolute;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    opacity: 0.2;
+}
+
+.d1 { top: 15%; left: 20%; font-size: 2rem; }
+.d2 { top: 25%; right: 18%; color: var(--accent-color); }
+.d3 { bottom: 30%; left: 15%; color: var(--secondary-color); }
+.d4 { bottom: 20%; right: 22%; font-size: 1.8rem; }
+.d5 { top: 55%; left: 8%; color: var(--primary-color); font-size: 2.2rem; }
+.d6 { top: 40%; right: 10%; font-size: 1.3rem; }
+
+@media (max-width: 768px) {
+    .doodle {
+        font-size: 1.1rem;
+    }
+
+    .d1, .d5 { font-size: 1.4rem; }
+}
