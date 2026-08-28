@@ -40,7 +40,7 @@
     padding: 10px 20px;
     border: 2px solid var(--text-color);
     border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-    color: var(--text-color);
+    color: #2b2b2b;
     font-weight: bold;
     cursor: none;
     background: #fff;

@@ -18,7 +18,7 @@ const linksData = [
     {
         id: 3,
         title: "LeetCode",
-        url: "https://leetcode.com/u/FrinX1903/",
+        url: "https://leetcode.com/u/FrinX019/",
         icon: "💻"
     },
     {

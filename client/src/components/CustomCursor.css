@@ -1,3 +1,22 @@
 .custom-cursor {
-    /* Styles handled inline via motion, but this file exists for future extensibility */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.15s ease;
+}
+
+.custom-cursor--interactive {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    border: 2px dashed var(--text-color);
+    mix-blend-mode: multiply;
 }

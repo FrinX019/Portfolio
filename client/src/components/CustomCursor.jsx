@@ -1,73 +1,72 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import './CustomCursor.css';
 
 const CustomCursor = () => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [cursorVariant, setCursorVariant] = useState("default");
-    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
-
-    if (isTouchDevice) return null;
+    const cursorRef = useRef(null);
+    const positionRef = useRef({ x: 0, y: 0 });
+    const frameRef = useRef(null);
+    const isInteractiveRef = useRef(false);
+    const isTouchDevice = useRef(
+        typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
+    );
 
     useEffect(() => {
-        const mouseMove = (e) => {
-            setMousePosition({
-                x: e.clientX,
-                y: e.clientY
-            });
+        if (isTouchDevice.current) return;
+
+        const cursor = cursorRef.current;
+        if (!cursor) return;
+
+        const updatePosition = () => {
+            const { x, y } = positionRef.current;
+            cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+            frameRef.current = null;
         };
 
-        window.addEventListener("mousemove", mouseMove);
+        const onMouseMove = (e) => {
+            positionRef.current = { x: e.clientX, y: e.clientY };
+
+            if (!frameRef.current) {
+                frameRef.current = requestAnimationFrame(updatePosition);
+            }
+        };
+
+        const onMouseOver = (e) => {
+            const isInteractive =
+                e.target.closest('a, button, input, textarea, select, label, [role="button"]') !== null;
+
+            if (isInteractive !== isInteractiveRef.current) {
+                isInteractiveRef.current = isInteractive;
+                cursor.classList.toggle('custom-cursor--interactive', isInteractive);
+            }
+        };
+
+        const onMouseLeave = () => {
+            cursor.style.opacity = '0';
+        };
+
+        const onMouseEnter = () => {
+            cursor.style.opacity = '1';
+        };
+
+        window.addEventListener('mousemove', onMouseMove, { passive: true });
+        document.addEventListener('mouseover', onMouseOver, { passive: true });
+        document.addEventListener('mouseleave', onMouseLeave);
+        document.addEventListener('mouseenter', onMouseEnter);
 
         return () => {
-            window.removeEventListener("mousemove", mouseMove);
+            window.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseover', onMouseOver);
+            document.removeEventListener('mouseleave', onMouseLeave);
+            document.removeEventListener('mouseenter', onMouseEnter);
+            if (frameRef.current) {
+                cancelAnimationFrame(frameRef.current);
+            }
         };
     }, []);
 
-    const variants = {
-        default: {
-            x: mousePosition.x - 10,
-            y: mousePosition.y - 10,
-            backgroundColor: "rgba(0,0,0,0.1)",
-            border: "2px solid var(--text-color)",
-            height: 20,
-            width: 20,
-            borderRadius: "50%",
-            transition: {
-                type: "spring",
-                mass: 0.3
-            }
-        },
-        text: {
-            height: 60,
-            width: 60,
-            x: mousePosition.x - 30,
-            y: mousePosition.y - 30,
-            backgroundColor: "var(--primary-color)",
-            mixBlendMode: "multiply",
-            border: "2px dashed var(--text-color)",
-            transition: {
-                type: "spring",
-                mass: 0.3
-            }
-        }
-    };
+    if (isTouchDevice.current) return null;
 
-    return (
-        <motion.div
-            className="custom-cursor"
-            variants={variants}
-            animate={cursorVariant}
-            style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                borderRadius: '50%',
-                pointerEvents: 'none',
-                zIndex: 9999
-            }}
-        />
-    );
+    return <div ref={cursorRef} className="custom-cursor" aria-hidden="true" />;
 };
 
 export default CustomCursor;
