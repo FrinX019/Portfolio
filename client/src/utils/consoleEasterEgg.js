@@ -13,7 +13,7 @@ export const logConsoleEasterEgg = () => {
         'color: #ccc; font-size: 12px;'
     );
     console.log(
-        '%c____@portfolio  →  fill in the 4-letter username.',
+        '%clogin: ____  →  fill in the 4-letter username.',
         'color: #7ee787; font-size: 12px; font-weight: bold;'
     );
     console.log(

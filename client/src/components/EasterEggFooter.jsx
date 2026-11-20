@@ -23,18 +23,18 @@ const EasterEggFooter = ({ variant = 'default' }) => {
                 className={`easter-egg-footer__puzzle${sequenceShake ? ' easter-egg-footer__puzzle--shake' : ''}${sequenceProgress > 0 ? ' easter-egg-footer__puzzle--active' : ''}`}
                 aria-hidden="true"
             >
+                <span className="easter-egg-footer__prompt-label">login:</span>
                 <span className="easter-egg-footer__username">
                     <span className="easter-egg-footer__typed">{typedPrefix}</span>
                     <span className="easter-egg-footer__blanks">{remainingBlanks}</span>
                 </span>
-                <span className="easter-egg-footer__host">@portfolio:~$</span>
                 <span className="easter-egg-footer__cursor">_</span>
             </div>
 
             <p className="easter-egg-footer__hint">
                 {sequenceProgress > 0
                     ? 'keep going…'
-                    : 'fill in the blanks — just start typing on your keyboard "Hint: it\'s MEE."'}
+                    : 'fill in the blanks — just start typing on your keyboard'}
             </p>
         </footer>
     );

@@ -54,6 +54,12 @@
     font-weight: bold;
 }
 
+.easter-egg-footer__prompt-label {
+    color: var(--text-color);
+    opacity: 0.55;
+    margin-right: 8px;
+}
+
 .easter-egg-footer__blanks {
     color: var(--text-color);
     opacity: 0.35;
