@@ -21,26 +21,25 @@ const Resume = () => {
                 <h3 className="section-header">Experience</h3>
                 <div className="timeline">
                     <div className="timeline-item">
+                        <div className="timeline-date">Jan 2026 – Apr 2026</div>
+                        <div className="timeline-content">
+                            <h3>Software Developer — Industry-Sponsored Capstone</h3>
+                            <h4>All Purpose Tech</h4>
+                            <ul>
+                                <li>Led a 4-person Agile team that delivered a configure, price, quote (CPQ) admin portal in 4 months and presented the final build to the industry sponsor.</li>
+                                <li>Connected 3 React admin modules to Spring Boot REST APIs and Oracle 19c for quote configuration.</li>
+                                <li>Built secured REST APIs with Java, Spring MVC, and Hibernate/JPA, wrote JUnit tests, and set up Docker containerization and GitHub Actions CI/CD.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="timeline-item">
                         <div className="timeline-date">Jan 2024 – May 2024</div>
                         <div className="timeline-content">
                             <h3>Full Stack Developer Intern</h3>
                             <h4>Brainybeam Info-Tech PVT LTD</h4>
                             <ul>
-                                <li>Streamlined the QR code generation process, reducing average generation time by 1.5 seconds.</li>
-                                <li>Engineered an advanced transaction optimization mechanism, boosting transaction speed by 40%.</li>
-                                <li>Documented and standardized the implementation process for QR code functionality.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="timeline-item">
-                        <div className="timeline-date">July 2023 – Aug 2023</div>
-                        <div className="timeline-content">
-                            <h3>Data Analytics and Machine Learning Intern</h3>
-                            <h4>INFOLABZ IT SERVICES PVT. LTD.</h4>
-                            <ul>
-                                <li>Designed responsive user interfaces leveraging Pandas, improving user satisfaction by 15%.</li>
-                                <li>Introduced automated testing with TensorFlow Serving, increasing test coverage by 30%.</li>
-                                <li>Spearheaded adoption of agile methodologies, improving team productivity by 15%.</li>
+                                <li>Improved billing data retrieval speed by 40% through changes to Python transaction processing.</li>
+                                <li>Integrated QR-code generation into the billing system and optimized the backend logic that generates invoices.</li>
                             </ul>
                         </div>
                     </div>
@@ -62,7 +61,7 @@ const Resume = () => {
                         <div className="timeline-date">August 2020 - May 2024</div>
                         <div className="timeline-content">
                             <h3>BEng in Computer Engineering</h3>
-                            <h4>Kalol Institute Of Technology And Research Centre</h4>
+                            <h4>Gujarat Technological University</h4>
                             <p>GPA: 3.26/4.00</p>
                         </div>
                     </div>
